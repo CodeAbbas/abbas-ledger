@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Wallet, TrendingUp, TrendingDown, PiggyBank, ArrowLeftRight, 
+  Wallet, TrendingUp, TrendingDown, CirclePoundSterling, ArrowLeftRight, 
   History, Trash2, Landmark 
 } from 'lucide-react';
 import { signInAnonymously, onAuthStateChanged } from "firebase/auth";
@@ -148,7 +148,7 @@ const App = () => {
 
           <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-slate-700/50">
              <div>
-                <p className="text-xs text-slate-400 flex items-center gap-1"><PiggyBank size={12}/> Savings</p>
+                <p className="text-xs text-slate-400 flex items-center gap-1"><CirclePoundSterling size={12}/> Savings</p>
                 <p className="text-emerald-400 font-bold">£{stats.savings.toFixed(2)}</p>
              </div>
              <div>
@@ -202,7 +202,7 @@ const App = () => {
           <div className="grid grid-cols-4 gap-2">
             <QuickButton type="income" icon={TrendingUp} colorClass="bg-emerald-500 text-emerald-400" label="Earn" />
             <QuickButton type="expense" icon={TrendingDown} colorClass="bg-red-500 text-red-400" label="Spend" />
-            <QuickButton type="savings" icon={PiggyBank} colorClass="bg-purple-500 text-purple-400" label="Save" />
+            <QuickButton type="savings" icon={CirclePoundSterling} colorClass="bg-purple-500 text-purple-400" label="Save" />
             <QuickButton type="lend" icon={ArrowLeftRight} colorClass="bg-blue-500 text-blue-400" label="Lend/Owe" />
           </div>
            <div className="grid grid-cols-2 gap-2 mt-2">
@@ -251,7 +251,7 @@ const App = () => {
                       `}>
                         {item.type === 'income' && <TrendingUp size={14}/>}
                         {item.type === 'expense' && <TrendingDown size={14}/>}
-                        {item.type === 'savings' && <PiggyBank size={14}/>}
+                        {item.type === 'savings' && <CirclePoundSterling size={14}/>}
                         {(item.type === 'lend' || item.type === 'owe') && <ArrowLeftRight size={14}/>}
                       </div>
                       <div>
