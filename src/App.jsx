@@ -28,7 +28,7 @@ const App = () => {
     // Simple anonymous sign-in for personal use
     signInAnonymously(auth).catch((error) => {
         console.error("Auth failed", error);
-    });
+  });
     
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
